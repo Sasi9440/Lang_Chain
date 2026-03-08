@@ -23,3 +23,144 @@ FastAPI REST API with CORS support for web integration. Exposes `/chat` endpoint
 - FAISS
 - HuggingFace Embeddings
 - Ollama (phi3:mini)
+
+## 🚀 Setup and Running the Project
+
+Before running the project, make sure Python and Ollama are installed on your system.
+
+### 📦 Required Python Packages
+
+```bash
+pip install langchain langchain-community langchain-text-splitters faiss-cpu sentence-transformers fastapi uvicorn pypdf ollama
+```
+
+### 📁 Project Structure
+```
+Lang_Chain
+│
+├── main.py
+├── rag_api.py
+├── Econamics.pdf
+├── requirements.txt
+├── README.md
+└── venv
+```
+
+### ⚙️ Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### ▶️ Activate Virtual Environment
+```bash
+.\venv\Scripts\activate
+```
+
+When activated, your terminal will show:
+```
+(venv) PS D:\Lang_Chain>
+```
+
+### 📥 Install Required Packages
+```bash
+pip install -r requirements.txt
+```
+
+### 🤖 Install Ollama Model
+
+Pull the local language model used for generating answers.
+
+```bash
+ollama pull phi3:mini
+```
+
+### ▶️ Run the CLI Application
+```bash
+python main.py
+```
+
+Example interaction:
+```
+Ask a question: What is scarcity?
+
+Answer:
+Scarcity refers to the limited availability of resources compared to unlimited human wants.
+```
+
+### 🌐 Run the FastAPI Server
+```bash
+uvicorn rag_api:app --reload
+```
+
+After running this command, the API server starts at: `http://127.0.0.1:8000`
+
+### 🔗 API Endpoint
+
+**POST /chat**
+
+Request body:
+```json
+{
+  "question": "What is opportunity cost?"
+}
+```
+
+Response:
+```json
+{
+  "answer": "Opportunity cost is the value of the next best alternative that must be forgone."
+}
+```
+
+## 🔄 System Architecture
+
+The system follows a Retrieval-Augmented Generation (RAG) pipeline.
+
+```
+PDF Document
+      │
+      ▼
+Text Extraction
+      │
+      ▼
+Text Chunking
+      │
+      ▼
+Embeddings Generation
+      │
+      ▼
+FAISS Vector Database
+      │
+      ▼
+User Question
+      │
+      ▼
+Similarity Search
+      │
+      ▼
+Relevant Context
+      │
+      ▼
+Ollama LLM (phi3:mini)
+      │
+      ▼
+Generated Answer
+```
+
+## 🎯 Key Features
+
+- 📄 PDF-based question answering
+- ⚡ Fast semantic search using FAISS
+- 🧠 HuggingFace embedding model
+- 🤖 Local LLM inference using Ollama
+- 🌐 FastAPI integration for web applications
+- 🔒 Answers generated strictly from document context
+
+## 💡 Future Improvements
+
+- Multiple document support
+- Web chat interface
+- Streaming responses
+- Authentication for API
+- Vector database persistence
