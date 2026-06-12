@@ -1,6 +1,5 @@
 https://github.com/user-attachments/assets/2ecf0165-93a0-4eb5-8374-9a4a105fa034
 
-![image alt](hthttps://github.com/Sasi9440/Lang_Chain/blob/56dac7941c7dbe84620fc3e08c4585a29e26aef6/Screenshot%202026-06-12%20145404.png
 
 # Lang_Chain
 
