@@ -1,5 +1,7 @@
 https://github.com/user-attachments/assets/2ecf0165-93a0-4eb5-8374-9a4a105fa034
 
+https://github.com/Sasi9440/Lang_Chain/blob/56dac7941c7dbe84620fc3e08c4585a29e26aef6/Screenshot%202026-06-12%20145404.png
+
 # Lang_Chain
 
 A RAG-based question answering system using LangChain and FastAPI. Loads a PDF, splits content into chunks, converts them into embeddings, and stores them in a FAISS vector database. When a user asks a question, the system retrieves relevant context from the PDF and generates answers strictly based on the document content.
